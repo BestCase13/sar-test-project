@@ -1,6 +1,10 @@
 <app-navbar></app-navbar>
-<aside>
-  <app-left-menu></app-left-menu>
-</aside>
-<div>Here will be rest of content</div>
+<div class="app-container">
+  <div class="col-sm12">
+    <app-left-menu></app-left-menu>
+  </div>
+  <div class="col-lg-10 col-sm12">
+    <router-outlet></router-outlet>
+  </div>
+</div>
 <app-footer></app-footer>

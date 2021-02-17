@@ -9,6 +9,7 @@ import { LeftMenuComponent } from './left-menu/left-menu.component';
 import { PostsComponent } from './posts/posts.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     LeftMenuComponent,
     PostsComponent,
     GalleryComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

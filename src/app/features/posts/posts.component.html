@@ -1,5 +1,20 @@
 <div class="container-fluid">
     <h1>Posts</h1>
+    <div class="new-post-form-container">
+        <form>
+            <div class="form-row">
+                <div class="col-lg-2 col-md-2 col-sm-12">
+                    <input [(ngModel)]="postTitle" type="text" class="form-control" placeholder="Post Title" name="postTitleInput">
+                </div>
+                <div class="col-lg-9 col-md-10 col-sm-12">
+                    <input [(ngModel)]="postContent" type="text" class="form-control" placeholder="Post Content" name="postContentInput">
+                </div>
+                <div class="col-auto">
+                    <button type="button" class="btn btn-primary" (click)="submintForm()">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
     <div class="row justify-content-start">
         <app-post-item *ngFor="let post of posts" [postItemModel]="post">
         </app-post-item>

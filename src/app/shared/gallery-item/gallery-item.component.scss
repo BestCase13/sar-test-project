@@ -1,5 +1,18 @@
 .card {
-    margin: 0 0 16px 16px;
-    max-width: 350px;
-  }
+  margin: 0 0 16px 16px;
+  max-width: 350px;
+}
+
+.card-img-top{
+  width: 40px;
+  height: 40px;
+}
+
+.card-header-container{
+  display: flex;
+  flex-direction: row;
   
+  h5.card-title{
+    margin-left: 8px;
+  }
+}

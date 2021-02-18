@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { take, takeUntil } from 'rxjs/operators';
+import { NewPost } from 'src/app/core/models/new-post.model';
 import { Post } from 'src/app/core/models/post.model';
 import { PostWebService } from 'src/app/core/web-servies/post-web.service';
 
@@ -12,6 +13,8 @@ import { PostWebService } from 'src/app/core/web-servies/post-web.service';
 export class PostsComponent implements OnInit, OnDestroy {
   posts: Post[];
   destroySubj = new Subject();
+  postTitle = '';
+  postContent = '';
 
   constructor(public postWebservice: PostWebService) { }
 
@@ -25,6 +28,12 @@ export class PostsComponent implements OnInit, OnDestroy {
       .subscribe(response => {
         this.posts = response;
       });
+  }
+
+  submintForm(): void {
+    const newPostModel: NewPost = { title: this.postTitle, content: this.postContent };
+    this.postWebservice.AddPost(newPostModel)
+      .subscribe(_ => this.loadPosts());
   }
 
   ngOnDestroy(): void {

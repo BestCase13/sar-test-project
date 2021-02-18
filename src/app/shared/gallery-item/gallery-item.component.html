@@ -1,6 +1,10 @@
 <div class="card">
-    <img class="card-img-top" [src]="galleryItemModel.url" alt="Card image cap">
-    <div class="card-body">
-        <h5 class="card-title">{{galleryItemModel.title}}</h5>
+    <div class="card-header">
+        <div class="card-header-container">
+            <img class="card-img-top" [src]="galleryItemModel.thumbnailUrl">
+            <h5 class="card-title">{{galleryItemModel.title}}</h5>
+        </div>
     </div>
+    <div class="card-body">
+    <img class="card-img" [src]="galleryItemModel.url">
 </div>

@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row justify-content-start">
+        <div class="col-lg-6 col-md-12">
+            <h1>Posts preview</h1>
+            <app-post-item *ngFor="let post of posts" [postItemModel]="post">               
+            </app-post-item>
+        </div>
+        <div class="col-lg-6 col-md-12">
+            <h1>Gallery preview</h1>
+            <app-gallery-item *ngFor="let galleryItem of galleryItems" [galleryItemModel]="galleryItem">               
+            </app-gallery-item>
+        </div>
+    </div>
+</div>

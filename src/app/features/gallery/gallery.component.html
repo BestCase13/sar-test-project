@@ -1,0 +1,7 @@
+<div class="container-fluid">
+    <h1>Gallery</h1>
+    <div class="row justify-content-start">
+        <app-gallery-item *ngFor="let galleryItem of galleryItems" [galleryItemModel]="galleryItem">
+        </app-gallery-item>
+    </div>
+</div>

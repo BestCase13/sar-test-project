@@ -1,15 +1,16 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { FooterComponent } from './footer/footer.component';
-import { LeftMenuComponent } from './left-menu/left-menu.component';
-import { PostsComponent } from './posts/posts.component';
-import { GalleryComponent } from './gallery/gallery.component';
-import { ContactUsComponent } from './contact-us/contact-us.component';
-import { HomeComponent } from './home/home.component';
+import { FooterComponent } from './core/components/footer/footer.component';
+import { HomeComponent } from './core/components/home/home.component';
+import { LeftMenuComponent } from './core/components/left-menu/left-menu.component';
+import { NavbarComponent } from './core/components/navbar/navbar.component';
+import { FeaturesModule } from './features/features.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -17,14 +18,15 @@ import { HomeComponent } from './home/home.component';
     NavbarComponent,
     FooterComponent,
     LeftMenuComponent,
-    PostsComponent,
-    GalleryComponent,
-    ContactUsComponent,
     HomeComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FeaturesModule,
+    SharedModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

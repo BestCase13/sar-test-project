@@ -2,3 +2,12 @@
   margin: 0 0 16px 16px;
   max-width: 350px;
 }
+
+.container-fluid {
+  width: 100%;
+  height: calc(100vh - 116px);
+}
+
+.gallery-background {
+  background-color: rgb(255, 255, 174);
+}

@@ -1,3 +1,12 @@
-.new-post-form-container{
-    margin-bottom: 8px;
+.new-post-form-container {
+  margin-bottom: 8px;
+}
+
+.container-fluid {
+  width: 100%;
+  height: calc(100vh - 116px);
+}
+
+.posts-background {
+  background-color: rgb(199, 255, 199);
 }

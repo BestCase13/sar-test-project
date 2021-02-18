@@ -1,5 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
-import { GalleryItem } from 'src/app/core/models/gallery-item.model';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+
+import { GalleryItem } from '../../core/models/gallery-item.model';
 
 @Component({
   selector: 'app-gallery-item',

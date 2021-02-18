@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-import { BaseService } from '../../core/services/base.service';
+import { BaseService } from '../../../core/services/base.service';
 
 @Component({
   selector: 'app-contact-us',

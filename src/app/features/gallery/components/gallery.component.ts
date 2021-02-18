@@ -2,9 +2,9 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { GalleryItem } from '../../core/models/gallery-item.model';
-import { BaseService } from '../../core/services/base.service';
-import { GalleryWebService } from '../../core/web-servies/gallery-web.service';
+import { GalleryItem } from '../../../core/models/gallery-item.model';
+import { BaseService } from '../../../core/services/base.service';
+import { GalleryWebService } from '../../../core/web-servies/gallery-web.service';
 
 @Component({
   selector: 'app-gallery',

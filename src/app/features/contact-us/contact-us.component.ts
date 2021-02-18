@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
+import { BaseService } from '../../core/services/base.service';
+
 @Component({
   selector: 'app-contact-us',
   templateUrl: './contact-us.component.html',
@@ -16,9 +18,10 @@ phoneNumberRegularExpression = new RegExp(`\\s*(?:\\+?(\\d{1,3}))?[-. (]*(\\d{3}
     phoneNumberInput: new FormControl('', [Validators.required, Validators.pattern(this.phoneNumberRegularExpression)]),
   });
 
-  constructor() { }
+  constructor(private baseService: BaseService) { }
 
   ngOnInit(): void {
+    this.baseService.colorSubject.next('contact-us');
   }
 
   submitForm(): void { }

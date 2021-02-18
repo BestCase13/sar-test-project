@@ -4,6 +4,7 @@ import { takeUntil } from 'rxjs/operators';
 
 import { GalleryItem } from '../../models/gallery-item.model';
 import { Post } from '../../models/post.model';
+import { BaseService } from '../../services/base.service';
 import { GalleryWebService } from '../../web-servies/gallery-web.service';
 import { PostWebService } from '../../web-servies/post-web.service';
 
@@ -19,11 +20,13 @@ export class HomeComponent implements OnInit, OnDestroy {
   destroySubj = new Subject();
 
   constructor(public galleryWebservice: GalleryWebService,
-    public postWebservice: PostWebService) { }
+    public postWebservice: PostWebService, 
+    private baseService: BaseService) { }
 
   ngOnInit(): void {
     this.loadGalleryItems();
     this.loadPosts();
+    this.baseService.colorSubject.next('home');
   }
 
   loadGalleryItems(): void {

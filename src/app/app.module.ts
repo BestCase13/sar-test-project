@@ -9,6 +9,7 @@ import { FooterComponent } from './core/components/footer/footer.component';
 import { HomeComponent } from './core/components/home/home.component';
 import { LeftMenuComponent } from './core/components/left-menu/left-menu.component';
 import { NavbarComponent } from './core/components/navbar/navbar.component';
+import { BaseService } from './core/services/base.service';
 import { FeaturesModule } from './features/features.module';
 import { SharedModule } from './shared/shared.module';
 
@@ -28,7 +29,7 @@ import { SharedModule } from './shared/shared.module';
     SharedModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [BaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

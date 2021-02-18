@@ -1,9 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
-import { take, takeUntil } from 'rxjs/operators';
-import { NewPost } from 'src/app/core/models/new-post.model';
-import { Post } from 'src/app/core/models/post.model';
-import { PostWebService } from 'src/app/core/web-servies/post-web.service';
+import { takeUntil } from 'rxjs/operators';
+import { NewPost } from '../../core/models/new-post.model';
+import { Post } from '../../core/models/post.model';
+import { BaseService } from '../../core/services/base.service';
+import { PostWebService } from '../../core/web-servies/post-web.service';
 
 @Component({
   selector: 'app-posts',
@@ -16,10 +17,11 @@ export class PostsComponent implements OnInit, OnDestroy {
   postTitle = '';
   postContent = '';
 
-  constructor(public postWebservice: PostWebService) { }
+  constructor(public postWebservice: PostWebService, private baseService: BaseService) { }
 
   ngOnInit(): void {
     this.loadPosts();
+    this.baseService.colorSubject.next('posts');
   }
 
   loadPosts(): void {

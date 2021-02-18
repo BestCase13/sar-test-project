@@ -1,8 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { GalleryItem } from 'src/app/core/models/gallery-item.model';
-import { GalleryWebService } from 'src/app/core/web-servies/gallery-web.service';
+
+import { GalleryItem } from '../../core/models/gallery-item.model';
+import { BaseService } from '../../core/services/base.service';
+import { GalleryWebService } from '../../core/web-servies/gallery-web.service';
 
 @Component({
   selector: 'app-gallery',
@@ -14,10 +16,11 @@ export class GalleryComponent implements OnInit, OnDestroy {
 
   destroySubj = new Subject();
 
-  constructor(public galleryWebservice: GalleryWebService) { }
+  constructor(public galleryWebservice: GalleryWebService, private baseService: BaseService) { }
 
   ngOnInit(): void {
     this.loadGalleryItems();
+    this.baseService.colorSubject.next('gallery');
   }
 
   loadGalleryItems(): void {
